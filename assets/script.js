@@ -30,3 +30,18 @@ rightArrow.addEventListener("click", () => {
 	console.log("Suivant");
 });
 
+
+let slideNumber = 0
+
+
+for (let i = slideNumber; i < slides.length; i++) {
+	const bulletPoint = document.createElement("div");
+	bulletPoint.classList.add("dot");
+	const bulletPointList = document.querySelector(".dots");
+	bulletPointList.appendChild(bulletPoint);
+	if (i === slideNumber) {
+		bulletPoint.classList.add("dot_selected");
+	}
+	}
+
+
