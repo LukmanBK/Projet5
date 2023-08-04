@@ -27,7 +27,7 @@ const bannerImg = document.getElementById("bannerPicture");
 const textImg = document.getElementById("bannerTxt");
 
 
-// Fonction pour que le click sur flèche provoque le changement de bullet point
+// Fonction permettant de gérer le changement de diapositive dans le carrousel
 function switchSlide(n) {
 	const dots = document.querySelectorAll(".dot");
 
@@ -36,9 +36,16 @@ function switchSlide(n) {
 	slideNumber += n;
 	console.log(slideNumber , "slide number")
 
-	
+	// Séquence d'instructions conditionnelles permettant de gérer le défilement infini 
+	if (slideNumber < 0) {
+		slideNumber = slides.length - 1;
+		console.log(slides.length - 1)
+	}
+	else if (slideNumber >= slides.length) {
+		slideNumber = 0;
+	}
 
-    showSlide();
+   showSlide();
 	dots[slideNumber].classList.add("dot_selected");
 }
 
